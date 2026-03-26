@@ -1,0 +1,80 @@
+START
+
+//Data storage
+DECLARE savings_goals = {} //Array to store all savings_goals
+
+//FUNCTION 1: CREATE a new savings savings_goal
+FUNCTION createSavingsGoal(user_id, traget_amount, target_date)
+goal = {
+    user_id: user_id,
+    target_amount: target_amount,
+    target_date: target_date,
+    amount_saved: 0
+}
+CALL storageSavingsGoal(goal)
+RETURN "Savings goal created"
+END FUNCTION
+
+//FUNCTION 2: STORE the savings goal
+FUNCTION storeSavingsGoal(goal)
+APPEND goal TO savings_goals
+RETURN "Goal stored"
+END FUNCTION
+
+//FUNCTION 3: UPDATE savings progress
+FUNCTION updateSavingsProgress(user_id, additional_saved)
+FIND goial IN savings_goals WHERE user_id == user_id
+IF goal FOUND THEN
+goal.amount_saved = goal.amount_saved + goal.amount_saved
+RETURN "progress updated. Saved: " + goal.amount_saved
+ELSE
+RETURN "Goal not found"
+END IF
+END FUNCTION
+
+//FUNCTION 4: RETRIEVE a savings goal
+FUNCTION retrieveSavingsGoal(user_id)
+FIND goal IN savings_goals WHERE user_id == user_id
+RETURN goal
+END FUNCTION
+
+//FUNCTION 5: RETURN savings status
+FUNCTION getsavingsStatus(user_id)
+IF goal FOUND THEN
+percentage = (goal.amount_saved / goal.target_amount) * 100
+RETURN "Progress: " + percentage + "% complete"
+ELSE
+RETURN "No goal found"
+END IF
+END FUNCTION
+
+//FUNCTION 6:COMPOSE notification message
+FUNCTION composeNotification(user_id, days_remaining, amount_needed)
+message = "ALERT: " + days_remaining + ' days left. "
+message = message + "Need $" + amount_needed + " to reach goal."
+RETURN message
+END FUNCTION
+
+//MAIN PROGRAM
+PROCEDURE main()
+// Create a new goal
+CALL updateSavingsGoal("user123", 1000, "2026-12-31")
+
+//Update progress
+CALL updateSavingsProgress("user123", 250)
+
+//Get statusstatus = CALL getSavingsStatus("user123")
+DISPLAY status
+
+//Check if goal date is approaching 
+days_left = 7
+amount_needed = 750
+IF days_left <= 7 AND amount_needed > 0 THEN
+message = CALL composeNotification("user123", days_left, amount_needed)
+CALL sendNotification("user123", message)
+END IF
+END PROCEDURE
+
+END
+
+

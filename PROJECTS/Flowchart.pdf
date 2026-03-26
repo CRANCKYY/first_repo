@@ -1,0 +1,37 @@
+                [START]
+                   |
+                   v
+            [Initialize System]
+                   |
+                   v
+            [Create Savings Goal]
+                   |
+                   v
+            [Store Goal in Array]
+                   |
+                   v
+          [Update Savings Progress]
+                   |
+                   v
+          [Retrieve Goal & Return Status]
+                   |
+                   v
+            [Check Days Remaining]
+                   |
+                   v
+                Days <= 7?
+                  /   \
+                 Yes   No
+                  |    |
+                  v    v
+            [compose  [End]
+              Alert]
+                |
+                v
+            [Send Notification]
+                     |
+                     v
+              [Display Status]
+                     |
+                     v
+                   [END]

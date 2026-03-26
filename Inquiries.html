@@ -1,0 +1,35 @@
+<html>   
+     <body>
+        <header class="header">
+          <link rel="stylesheet" href="style.css">
+          <nav>
+             <ul class="nav-context"></ul>
+                 <li><a href="index.html">HOME</a></li>
+                 <li><a href="Inquiries.html">INQUIRIES</a></li>
+                 <li><a href="about.html">ABOUT</a></li>
+             </ul>
+         </nav>
+        </header>
+          <section class="FIRST">
+             <div class="FIRST-CONTEXT">
+                 <h1>Make your first inquiry</h1>
+                 <h2>Have a question or want to book a session? Fill out the form below, and we’ll get back to you within 24 hours.</h2>  
+             </div>
+             <hr>
+             <form action="submit_inquiry.php"method="post">
+                <div class="div">
+                    <ul>
+                        <li>
+                         <label>Name:</label>
+                         <input type="text" name="name">
+                        </li>
+                        <li>
+                         <label>Email:</label>
+                         <input type="email" name="email"><br>
+                        </li>
+                        <li>
+                         <label>Message:</label>
+                         <textarea name="message"></textarea>
+                        </li>
+                         <button type="submit">Send</button> 
+            </form>
